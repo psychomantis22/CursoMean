@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    </head>
+    <body ng-app="myLogin">
+        <div ng-controller="loginController as ctrl">
+            User: <input type="text" ng-model="ctrl.login" /><br />
+            password: <input type="password" ng-model="ctrl.password" /><br />
+            <button ng-click="ctrl.doLogin()">Login</button>
+        </div>
+        <script>
+            $app = angular.module("myLogin", []);
+
+            $app.controller("loginController", function($scope) {
+                this.login = '';
+                this.password = '';
+                this.doLogin = function () {
+                    console.log(this.login);
+                    console.log(this.password);
+                };
+            });
+        </script>
+    </body>
+</html>
